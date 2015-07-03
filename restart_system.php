@@ -10,7 +10,10 @@ session_start();
 
 include("include/functions.php");
 
-$local_ip_address = $_SERVER['SERVER_ADDR']; //142.136.226.205;
+//$local_ip_address = $_SERVER[ 'SERVER_ADDR' ];  //142.136.226.205;
+$host=gethostname();
+$local_ip_address=gethostbyname($host);
+
 $check_status = check_temp_responding($local_ip_address.':8080');
 $tblName = 'ss_tbl_system_log';
 
@@ -72,6 +75,7 @@ if($check_status !='online')
 		//executed restart device command
 		//restart command here
 		exec('sudo reboot');
+		echo "restart command executed";
 	}
 } //if 
 else
@@ -106,7 +110,10 @@ else
 		
 		$deleteWhere = " sps_id   = " .$data['0'];
 		$returnResource2 = deleteQuery($tblName, $deleteWhere, $disQuery = '');
+	
+	 	echo  "delete recored ";
 	}	
+	echo "device is online";
 
 
 }

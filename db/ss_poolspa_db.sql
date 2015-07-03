@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `ss_tbl_system_log` (
   `sps_updated_time` datetime NOT NULL,
   `sps_off_time` datetime NOT NULL,
   PRIMARY KEY (`sps_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ;
 
 --
 -- Dumping data for table `ss_tbl_system_log`
